@@ -10,7 +10,7 @@ test('Where statement', () => {
   const query = knex('Table')
     .select(['Id', 'Name'])
     .where({
-      Id: '12345'
+      Id: '12345',
     });
 
   expect(query.toString()).toBe('select Id, Name from Table where Id = \'12345\'');
@@ -18,15 +18,12 @@ test('Where statement', () => {
 
 test('Subquery as a column', () => {
   const subquery = knex('Contact.OpportunityContactRoles')
-    .select(['OpportunityContactRole.Opportunity.Id', 'OpportunityContactRole.Opportunity.Name'])
-    .where({ xfoo: '123' })
-    .orderBy('xfoo')
-    .limit(3)
+    .select(['OpportunityContactRole.Opportunity.Id', 'OpportunityContactRole.Opportunity.Name']);
 
   const query = knex('Contact')
     .select([subquery])
     .where({
-      Id: '12345'
+      Id: '12345',
     });
 
   expect(query.toString()).toBe('select (select OpportunityContactRole.Opportunity.Id, OpportunityContactRole.Opportunity.Name from Contact.OpportunityContactRoles) from Contact where Id = \'12345\'');
@@ -37,10 +34,10 @@ test('AND operator', () => {
     .select(['Foo', 'Bar'])
     .where({
       Id: '12345',
-      Bar: 'bar'
+      Bar: 'bar',
     });
 
-  expect(query.toString()).toBe('select Foo, Bar from Table where Id = \'12345\' and Bar = \'bar\'')
+  expect(query.toString()).toBe('select Foo, Bar from Table where Id = \'12345\' and Bar = \'bar\'');
 });
 
 test('OR operator', () => {
@@ -49,7 +46,7 @@ test('OR operator', () => {
     .where({ Id: '12345' })
     .orWhere({ Bar: 'bar' });
 
-  expect(query.toString()).toBe('select Foo, Bar from Table where Id = \'12345\' or (Bar = \'bar\')')
+  expect(query.toString()).toBe('select Foo, Bar from Table where Id = \'12345\' or (Bar = \'bar\')');
 });
 
 test('LIKE operator', () => {

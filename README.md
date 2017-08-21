@@ -27,7 +27,7 @@ console.log(soql.toString());
 
 ## TODO
 
-- Add eslint
+- Add warnings and errors when trying to use connection
 - Add tests for orderBy, groupBy, Limit
 
 ### Copyright and License

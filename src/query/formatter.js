@@ -1,10 +1,6 @@
 const Formatter = require('knex/lib/formatter');
 
-class Formatter_SOQL extends Formatter {
-  constructor(client) {
-    super(client);
-  }
-
+class FormatterSOQL extends Formatter {
   wrap(value) {
     if (typeof value === 'function') {
       return this.outputQuery(this.compileCallback(value), true);
@@ -14,16 +10,16 @@ class Formatter_SOQL extends Formatter {
     if (raw) return raw;
 
     if (typeof value === 'number') return value;
-    return this._wrapString(value + '');
+    return this._wrapString(`${value}`);
   }
 
-  outputQuery(compiled, isParameter) {
+  outputQuery(compiled) {
     let sql = compiled.sql || '';
 
     if (sql) {
       if (compiled.method === 'select') {
         sql = `(${sql})`;
-        if (compiled.as) return this.alias(sql, this.wrap(compiled.as))
+        if (compiled.as) return this.alias(sql, this.wrap(compiled.as));
       }
     }
 
@@ -31,4 +27,4 @@ class Formatter_SOQL extends Formatter {
   }
 }
 
-module.exports = Formatter_SOQL;
+module.exports = FormatterSOQL;

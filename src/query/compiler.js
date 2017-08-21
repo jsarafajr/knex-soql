@@ -1,12 +1,6 @@
 const QueryCompiler = require('knex/lib/query/compiler');
-const Formatter = require('./formatter');
 
-class QueryCompiler_SOQL extends QueryCompiler {
-  constructor(client, builder) {
-    super(client, builder);
-    this.formatter = new Formatter(client);
-  }
-
+class QueryCompilerSOQL extends QueryCompiler {
   columns() {
     const columns = this.grouped.columns || [];
     const sql = [];
@@ -25,4 +19,4 @@ class QueryCompiler_SOQL extends QueryCompiler {
   }
 }
 
-module.exports = QueryCompiler_SOQL;
+module.exports = QueryCompilerSOQL;

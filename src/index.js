@@ -3,16 +3,8 @@ const QueryCompiler = require('./query/compiler');
 const QueryBuilder = require('./query/builder');
 const Formatter = require('./query/formatter');
 
-class Client_SOQL extends Client {
-  constructor(config) {
-    super(config);
-  }
-
+class ClientSOQL extends Client {
   get dialect() {
-    return 'soql';
-  }
-
-  get driverName() {
     return 'soql';
   }
 
@@ -29,8 +21,8 @@ class Client_SOQL extends Client {
   }
 
   queryBuilder() {
-    return new QueryBuilder(this)
+    return new QueryBuilder(this);
   }
 }
 
-module.exports = Client_SOQL;
+module.exports = ClientSOQL;
