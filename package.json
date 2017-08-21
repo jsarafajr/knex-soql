@@ -1,0 +1,43 @@
+{
+  "name": "knex-soql",
+  "version": "0.0.1",
+  "description": "SOQL plugin dialect for knex.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jsarafajr/knex-soql.git"
+  },
+  "keywords": [
+    "soql",
+    "salesforce",
+    "knex",
+    "sql",
+    "sql-builder"
+  ],
+  "author": {
+    "name": "Yevhenii Baraniuk",
+    "web": "https://github.com/jsarafajr"
+  },
+  "bugs": {
+    "url": "https://github.com/jsarafajr/knex-soql/issues"
+  },
+  "homepage": "https://github.com/jsarafajr/knex-soql#readme",
+  "dependencies": {
+    "knex": ">=0.11.4"
+  },
+  "peerDependencies": {
+    "knex": ">=0.11.4"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "files": [
+    "README.md",
+    "src/*",
+    "index.js",
+    "LICENSE"
+  ]
+}
