@@ -1,6 +1,6 @@
 {
   "name": "knex-soql",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "SOQL plugin dialect for knex.js",
   "main": "index.js",
   "scripts": {
