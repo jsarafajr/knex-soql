@@ -1,6 +1,8 @@
 # SOQL Dialect for Knex.js
 
 [![Build Status](https://travis-ci.org/jsarafajr/knex-soql.svg?branch=master)](https://travis-ci.org/jsarafajr/knex-soql)
+[![codecov](https://codecov.io/gh/jsarafajr/knex-soql/branch/master/graph/badge.svg)](https://codecov.io/gh/jsarafajr/knex-soql)
+[![npm version](https://badge.fury.io/js/knex-soql.svg)](https://badge.fury.io/js/knex-soql)
 
 Knex.js dialect for building and executing Salesforce Queries (SOQL)
 

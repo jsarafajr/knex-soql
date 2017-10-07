@@ -4,7 +4,8 @@
   "description": "SOQL plugin dialect for knex.js",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "knex": ">=0.11.4"
   },
   "devDependencies": {
+    "codecov": "^2.3.0",
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
