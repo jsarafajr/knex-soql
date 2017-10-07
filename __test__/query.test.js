@@ -16,6 +16,18 @@ test('Where statement', () => {
   expect(query.toString()).toBe('select Id, Name from Table where Id = \'12345\'');
 });
 
+test('Where statement with undefined value', () => {
+  expect(() => {
+    const query = knex('Table')
+      .select(['Id', 'Name'])
+      .where({
+        Id: undefined,
+      });
+
+    query.toString();
+  }).toThrow();
+});
+
 test('Subquery as a column', () => {
   const subquery = knex('Contact.OpportunityContactRoles')
     .select(['OpportunityContactRole.Opportunity.Id', 'OpportunityContactRole.Opportunity.Name']);
