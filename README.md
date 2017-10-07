@@ -96,12 +96,6 @@ console.log(query.toString());
 */
 ```
 
-
-## TODO
-
-- Implement insert, update, delete
-- Add tests for orderBy, groupBy, Limit
-
 ## Credits
 - [Salesforce Object Query Language (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_sosl_intro.htm)
 - [Knex.js](http://knexjs.org/)
