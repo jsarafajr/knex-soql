@@ -1,4 +1,9 @@
 # SOQL Dialect for Knex.js
+
+[![Build Status](https://travis-ci.org/jsarafajr/knex-soql.svg?branch=master)](https://travis-ci.org/jsarafajr/knex-soql)
+
+Knex.js dialect for building and executing Salesforce Queries (SOQL)
+
 ## Install
 
 ```bash
@@ -32,14 +37,14 @@ const client = require('knex-soql');
 const knex = require('knex')({
   client,
   connection: {
-    oauth2 : {
-        clientId : '<your Salesforce OAuth2 client ID is here>',
-        clientSecret : '<your Salesforce OAuth2 client secret is here>',
-        redirectUri : '<your Salesforce OAuth2 redirect URI is here>'
-      },
-      instanceUrl : '<your Salesforce server URL (e.g. https://na1.salesforce.com) is here>',
-      accessToken : '<your Salesforrce OAuth2 access token is here>',
-      refreshToken : '<your Salesforce OAuth2 refresh token is here>'
+    oauth2: {
+      clientId: '<your Salesforce OAuth2 client ID is here>',
+      clientSecret: '<your Salesforce OAuth2 client secret is here>',
+      redirectUri: '<your Salesforce OAuth2 redirect URI is here>'
+    },
+    instanceUrl: '<your Salesforce server URL (e.g. https://na1.salesforce.com) is here>',
+    accessToken: '<your Salesforrce OAuth2 access token is here>',
+    refreshToken: '<your Salesforce OAuth2 refresh token is here>'
   }
 });
 ```
@@ -47,15 +52,15 @@ const knex = require('knex')({
 Or you can even provide jsforce.Connection instance configured by yourself to knex along with knex-soql client:
 ```js
 const client = require('knex-soql');
-const jsforce = require('jsforce);
+const jsforce = require('jsforce');
 const initKnex = require('knex');
 
 const execute = async () => {
-    const connection = new jsforce.Connection();
-    await connection.login('example@mail.com', 'supersecret');
+  const connection = new jsforce.Connection();
+  await connection.login('example@mail.com', 'supersecret');
 
-    const knex = initKnex({ client, connection });
-    const contacts = await knex('Contact').select(['Id', 'Name']);
+  const knex = initKnex({ client, connection });
+  const contacts = await knex('Contact').select(['Id', 'Name']);
 };
 
 execute();
@@ -78,14 +83,14 @@ const query = knex('Account')
 
 console.log(query.toString());
 /*
-    select Id, Name, (
-        select Contact.Id, Contact.Name
-        from Account.Contacts
-        order by LastModifiedDate desc
-        limit 3
-    )
-    from Account
-    where Id = '1337'
+  select Id, Name, (
+    select Contact.Id, Contact.Name
+    from Account.Contacts
+    order by LastModifiedDate desc
+    limit 3
+  )
+  from Account
+  where Id = '1337'
 */
 ```
 
