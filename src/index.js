@@ -8,18 +8,6 @@ const Promise = require('bluebird');
 const { Connection } = require('jsforce');
 const { uniqueId, pick } = require('lodash');
 
-const charsMap = {
-  '\0': '\\0',
-  '\b': '\\b',
-  '\t': '\\t',
-  '\n': '\\n',
-  '\r': '\\r',
-  '\x1a': '\\Z',
-  '"': '\\"',
-  '\'': '\\\'',
-  '\\': '\\\\',
-};
-
 class ClientSOQL extends Client {
   constructor(options = {}) {
     super();
@@ -98,11 +86,7 @@ class ClientSOQL extends Client {
   }
 
   _escapeBinding(...args) {
-    return makeEscape({
-      escapeString(str) {
-        return `'${str.replace(/'/g, "''")}'`;
-      },
-    })(...args);
+    return makeEscape()(...args);
   }
 }
 

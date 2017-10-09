@@ -16,14 +16,20 @@ test('Where statement', () => {
   expect(query.toString()).toBe('select Id, Name from Table where Id = \'12345\'');
 });
 
-test('Where statement with single quote value', () => {
+test('Where statement with escape sequences', () => {
   const query = knex('Table')
     .select(['Id', 'Name'])
     .where({
-      Id: '\'',
+      f1: '\'',
+      f2: '"',
+      f3: '\r',
+      f4: '\t',
+      f5: '\b',
+      f6: '\\',
     });
 
-  expect(query.toString()).toBe("select Id, Name from Table where Id = \'\\'\'"); // eslint-disable-line
+  expect(query.toString()).toBe('select Id, Name from Table where ' +
+    "f1 = '\\'' and f2 = '\\\"' and f3 = '\\r' and f4 = '\\t' and f5 = '\\b' and f6 = '\\\\'");
 });
 
 test('Where statement with undefined value', () => {
