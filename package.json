@@ -4,6 +4,7 @@
   "description": "Knex.js dialect for building and executing Salesforce Queries (SOQL)",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "jest",
     "test:coverage": "jest --coverage"
   },
