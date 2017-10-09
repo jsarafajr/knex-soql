@@ -16,6 +16,16 @@ test('Where statement', () => {
   expect(query.toString()).toBe('select Id, Name from Table where Id = \'12345\'');
 });
 
+test('Where statement with single quote value', () => {
+  const query = knex('Table')
+    .select(['Id', 'Name'])
+    .where({
+      Id: '\'',
+    });
+
+  expect(query.toString()).toBe("select Id, Name from Table where Id = \'\\'\'"); // eslint-disable-line
+});
+
 test('Where statement with undefined value', () => {
   expect(() => {
     const query = knex('Table')

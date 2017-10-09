@@ -1,4 +1,5 @@
 const Client = require('knex/lib/client');
+const { makeEscape } = require('knex/lib/query/string');
 const QueryCompiler = require('./query/compiler');
 const QueryBuilder = require('./query/builder');
 const Formatter = require('./query/formatter');
@@ -82,6 +83,14 @@ class ClientSOQL extends Client {
       default:
         return obj.response;
     }
+  }
+
+  _escapeBinding(...args) {
+    return makeEscape({
+      escapeString(str) {
+        return `'${str.replace(/'/g, "\\'")}'`;
+      },
+    })(...args);
   }
 }
 

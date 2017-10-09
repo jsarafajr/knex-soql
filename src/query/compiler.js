@@ -1,3 +1,4 @@
+const helpers = require('knex/lib/helpers');
 const QueryCompiler = require('knex/lib/query/compiler');
 
 class QueryCompilerSOQL extends QueryCompiler {
