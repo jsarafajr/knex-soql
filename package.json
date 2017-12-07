@@ -1,6 +1,6 @@
 {
   "name": "knex-soql",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Knex.js dialect for building and executing Salesforce Queries (SOQL)",
   "main": "index.js",
   "scripts": {
