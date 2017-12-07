@@ -10,7 +10,8 @@ class FormatterSOQL extends Formatter {
     if (raw) return raw;
 
     if (typeof value === 'number') return value;
-    return this._wrapString(`${value}`);
+    // save compatibility with older knex.js versions
+    return (this.wrapString || this._wrapString).call(this, `${value}`);
   }
 
   outputQuery(compiled) {
