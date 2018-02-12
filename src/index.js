@@ -33,8 +33,8 @@ class ClientSOQL extends Client {
     return value;
   }
 
-  formatter() {
-    return new Formatter(this);
+  formatter(builder) {
+    return new Formatter(this, builder);
   }
 
   queryCompiler(...args) {
