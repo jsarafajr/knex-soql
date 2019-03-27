@@ -10,7 +10,7 @@ const { uniqueId, pick } = require('lodash');
 
 class ClientSOQL extends Client {
   constructor(options = {}) {
-    super();
+    super({ client: 'soql' });
     if (options.connection) {
       if (options.connection instanceof Connection) {
         this._connection = options.connection;
