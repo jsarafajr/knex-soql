@@ -30,11 +30,11 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "jsforce": "^1.8.0",
-    "knex": ">=0.11.4",
+    "knex": ">=0.11.4 <0.17.2",
     "lodash": "^4.6.0"
   },
   "peerDependencies": {
-    "knex": ">=0.11.4"
+    "knex": ">=0.11.4 <0.17.2"
   },
   "devDependencies": {
     "codecov": "^2.3.0",
