@@ -1,5 +1,5 @@
-const Client = require('knex/lib/client');
-const { makeEscape } = require('knex/lib/query/string');
+const Client = require('knex/src/client');
+const { makeEscape } = require('knex/src/query/string');
 const QueryCompiler = require('./query/compiler');
 const QueryBuilder = require('./query/builder');
 const Formatter = require('./query/formatter');

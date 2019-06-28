@@ -1,4 +1,4 @@
-const Formatter = require('knex/lib/formatter');
+const Formatter = require('knex/src/formatter');
 
 class FormatterSOQL extends Formatter {
   wrap(value) {

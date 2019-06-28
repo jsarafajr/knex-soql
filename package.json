@@ -28,13 +28,13 @@
   },
   "homepage": "https://github.com/jsarafajr/knex-soql#readme",
   "dependencies": {
-    "bluebird": "^3.4.6",
-    "jsforce": "^1.8.0",
-    "knex": ">=0.11.4 <0.17.2",
-    "lodash": "^4.6.0"
+    "bluebird": "^3.5.5",
+    "jsforce": "^1.9.1",
+    "knex": ">=0.18.0",
+    "lodash": "^4.17.0"
   },
   "peerDependencies": {
-    "knex": ">=0.11.4 <0.17.2"
+    "knex": ">=0.18.0"
   },
   "devDependencies": {
     "codecov": "^2.3.0",

@@ -1,4 +1,4 @@
-const QueryCompiler = require('knex/lib/query/compiler');
+const QueryCompiler = require('knex/src/query/compiler');
 
 class QueryCompilerSOQL extends QueryCompiler {
   columns() {
