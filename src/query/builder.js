@@ -1,4 +1,4 @@
-const Builder = require('knex/src/query/builder');
+const Builder = require('knex/lib/query/builder');
 
 class BuilderSOQL extends Builder {
   count(column) {

@@ -1,12 +1,13 @@
-const Client = require('knex/src/client');
-const { makeEscape } = require('knex/src/query/string');
+const Promise = require('bluebird');
+const { Connection } = require('jsforce');
+const { uniqueId, pick } = require('lodash');
+
+const Client = require('knex/lib/client');
+const { makeEscape } = require('knex/lib/query/string');
 const QueryCompiler = require('./query/compiler');
 const QueryBuilder = require('./query/builder');
 const Formatter = require('./query/formatter');
 
-const Promise = require('bluebird');
-const { Connection } = require('jsforce');
-const { uniqueId, pick } = require('lodash');
 
 class ClientSOQL extends Client {
   constructor(options = {}) {
@@ -71,7 +72,7 @@ class ClientSOQL extends Client {
   }
 
   query(connection, obj) {
-    return connection.query(obj.sql).then(response => Object.assign({}, obj, { response }));
+    return connection.query(obj.sql).then(response => ({ ...obj, response }));
   }
 
   processResponse(obj) {
