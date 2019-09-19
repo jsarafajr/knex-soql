@@ -1,4 +1,5 @@
 const client = require('./..');
+// eslint-disable-next-line import/order
 const knex = require('knex')({ client });
 
 test('Simple select', () => {
@@ -28,8 +29,8 @@ test('Where statement with escape sequences', () => {
       f6: '\\',
     });
 
-  expect(query.toString()).toBe('select Id, Name from Table where ' +
-    "f1 = '\\'' and f2 = '\\\"' and f3 = '\\r' and f4 = '\\t' and f5 = '\\b' and f6 = '\\\\'");
+  expect(query.toString()).toBe('select Id, Name from Table where '
+    + "f1 = '\\'' and f2 = '\\\"' and f3 = '\\r' and f4 = '\\t' and f5 = '\\b' and f6 = '\\\\'");
 });
 
 test('Where statement with undefined value', () => {
