@@ -30,7 +30,7 @@
   "dependencies": {
     "bluebird": "^3.5.5",
     "jsforce": "^1.9.2",
-    "knex": ">=0.19.4",
+    "knex": ">=0.21.0",
     "lodash": "^4.17.15"
   },
   "peerDependencies": {
