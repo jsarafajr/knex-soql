@@ -37,7 +37,7 @@
     "knex": ">=0.19.4"
   },
   "devDependencies": {
-    "codecov": "^3.5.0",
+    "codecov": "^3.7.0",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
