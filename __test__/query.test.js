@@ -1,4 +1,4 @@
-const client = require('./..');
+const client = require('..');
 // eslint-disable-next-line import/order
 const knex = require('knex')({ client });
 

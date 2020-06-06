@@ -1,6 +1,6 @@
 const initKnex = require('knex');
 const jsforce = require('jsforce');
-const client = require('./..');
+const client = require('..');
 
 test('Knex client without connection', async () => {
   const knex = initKnex({ client });

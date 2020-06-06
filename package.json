@@ -28,20 +28,20 @@
   },
   "homepage": "https://github.com/jsarafajr/knex-soql#readme",
   "dependencies": {
-    "bluebird": "^3.5.5",
-    "jsforce": "^1.9.2",
-    "knex": ">=0.19.4",
+    "bluebird": "^3.7.2",
+    "jsforce": "^1.9.3",
+    "knex": ">=0.21.1",
     "lodash": "^4.17.15"
   },
   "peerDependencies": {
-    "knex": ">=0.19.4"
+    "knex": ">=0.21.1"
   },
   "devDependencies": {
-    "codecov": "^3.5.0",
-    "eslint": "^6.4.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "jest": "^25.1.0"
+    "codecov": "^3.7.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^26.0.1"
   },
   "files": [
     "README.md",
