@@ -8,7 +8,6 @@ const QueryCompiler = require('./query/compiler');
 const QueryBuilder = require('./query/builder');
 const Formatter = require('./query/formatter');
 
-
 class ClientSOQL extends Client {
   constructor(options = {}) {
     super({ client: 'soql' });
