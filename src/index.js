@@ -1,4 +1,3 @@
-const Promise = require('bluebird');
 const { Connection } = require('jsforce');
 const { uniqueId, pick } = require('lodash');
 
