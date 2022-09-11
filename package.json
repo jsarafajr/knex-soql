@@ -31,11 +31,11 @@
   "homepage": "https://github.com/jsarafajr/knex-soql#readme",
   "dependencies": {
     "jsforce": "^1.10.1",
-    "knex": ">=0.21.6",
+    "knex": "^0.21.17",
     "lodash": "^4.17.21"
   },
   "peerDependencies": {
-    "knex": ">=0.21.6"
+    "knex": "^0.21.17"
   },
   "devDependencies": {
     "codecov": "^3.8.1",
